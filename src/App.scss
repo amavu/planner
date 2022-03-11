@@ -1,6 +1,10 @@
+@import "homepage";
 html {
   display: flex;
   flex-direction: column;
+  body {
+    font-family: "Inter", sans-serif;
+  }
 }
 
 h1 {
