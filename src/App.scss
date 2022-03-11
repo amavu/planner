@@ -1,4 +1,7 @@
 @import "homepage";
+@import "signup";
+@import "edit";
+
 html {
   display: flex;
   flex-direction: column;
@@ -15,4 +18,9 @@ h1 {
   height: 100px;
   align-items: center;
   justify-content: center;
+}
+
+.app-container {
+  max-height: 100vh;
+  height: 100vh;
 }
