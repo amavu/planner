@@ -1,0 +1,62 @@
+@import "mixins";
+
+.edit-todo-container {
+  height: calc(100vh - 150px);
+  display: flex;
+
+  .edit-todo-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+
+    & > * {
+      margin-bottom: 45px;
+    }
+
+    .input-label {
+      font-family: "Inter", sans-serif;
+      display: flex;
+      flex-direction: column;
+
+      .input-style {
+        height: 30px;
+        border-style: none;
+        border-bottom: 2px solid black;
+      }
+
+      .time-input-label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .clock-svg {
+          position: absolute;
+          left: 0;
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+
+    .buttons-edit-todo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 70px;
+
+      .cancel-edit-todo-button {
+        @include button-style-purple;
+        width: 124px;
+        height: 41px;
+      }
+
+      .save-edit-todo-button {
+        @include button-style-purple;
+        width: 124px;
+        height: 41px;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { Homepage } from "./components/Homepage";
 import { SignUp } from "./components/SignUp";
 import { Edit } from "./components/Edit";
 import { Add } from "./components/Add";
+import { EditToDo } from "./components/EditToDo";
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
           </Route>
           <Route path="/add">
             <Add />
+          </Route>
+          <Route path="/edit-todo">
+            <EditToDo />
           </Route>
         </Switch>
       </div>
