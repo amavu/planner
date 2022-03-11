@@ -1,20 +1,28 @@
 import React from "react";
 import "./App.scss";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import { Homepage } from "./components/Homepage";
+import { SignUp } from "./components/SignUp";
+import { Login } from "./components/Login";
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <div>
         <h1>Planner</h1>
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Homepage />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   );
 };
 
