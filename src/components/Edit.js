@@ -1,9 +1,8 @@
-import React from "react";
 import { CgProfile } from "react-icons/cg";
 
 export const Edit = () => {
   return (
-    <div className="sign-up-container">
+    <div className="edit-container">
       <h2>EDIT</h2>
       <form className="form-container">
         <div className="profile-picture">
@@ -39,7 +38,7 @@ export const Edit = () => {
         </label>
         <div className="buttons-sign-up-form">
           <button className="cancel-button">CANCEL</button>
-          <button className="save-edits-button">SAVE EDITS</button>
+          <button className="save-edits-button">SAVE</button>
         </div>
       </form>
     </div>

@@ -1,6 +1,6 @@
 @import "mixins";
 
-.sign-up-container {
+.edit-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +42,6 @@
     .input-label {
       width: 45%;
       position: relative;
-      @include input-label-form;
     }
   }
 
