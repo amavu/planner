@@ -1,9 +1,9 @@
-import React from "react";
 import "./App.scss";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { Homepage } from "./components/Homepage";
 import { SignUp } from "./components/SignUp";
 import { Edit } from "./components/Edit";
+import { Add } from "./components/Add";
 
 const App = () => {
   return (
@@ -19,6 +19,9 @@ const App = () => {
           </Route>
           <Route path="/edit">
             <Edit />
+          </Route>
+          <Route path="/add">
+            <Add />
           </Route>
         </Switch>
       </div>
