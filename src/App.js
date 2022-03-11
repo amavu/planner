@@ -3,12 +3,12 @@ import "./App.scss";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { Homepage } from "./components/Homepage";
 import { SignUp } from "./components/SignUp";
-import { Login } from "./components/Login";
+import { Edit } from "./components/Edit";
 
 const App = () => {
   return (
     <HashRouter>
-      <div>
+      <div className="app-container">
         <h1>Planner</h1>
         <Switch>
           <Route exact path="/">
@@ -17,8 +17,8 @@ const App = () => {
           <Route path="/signup">
             <SignUp />
           </Route>
-          <Route path="/login">
-            <Login />
+          <Route path="/edit">
+            <Edit />
           </Route>
         </Switch>
       </div>
