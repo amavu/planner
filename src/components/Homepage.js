@@ -40,7 +40,7 @@ export const Homepage = ({ onLoginChange }) => {
       onLoginChange();
 
       // 3. Redirect back to feed
-      history.replace("/todolist");
+      history.replace("/todolists");
     } catch (error) {}
   };
 
