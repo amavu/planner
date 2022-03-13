@@ -3,6 +3,7 @@
 .add-container {
   height: calc(100vh - 150px);
   display: flex;
+  flex-direction: column;
 
   .add-form {
     display: flex;
@@ -38,6 +39,11 @@
           height: 50px;
         }
       }
+    }
+
+    .react-datepicker__input-container {
+      display: flex;
+      justify-content: center;
     }
 
     .buttons-add {

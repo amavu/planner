@@ -6,11 +6,12 @@
   font-family: "Inter", sans-serif;
 }
 
-@mixin input-style-login {
+@mixin input-style {
   display: flex;
   flex-direction: column;
   width: 312px;
   height: 48px;
+  font-family: "Inter", sans-serif;
 }
 
 @mixin button-style-orange {
