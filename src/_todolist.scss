@@ -1,0 +1,47 @@
+@import "mixins";
+
+.to-do-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 100px);
+  background-color: rgba(155, 54, 255, 1);
+
+  .add-to-do-button {
+    @include button-style-orange;
+  }
+
+  .to-do-list-items {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .to-do-item {
+    display: flex;
+    border-radius: 8px;
+    background-color: white;
+    padding: 14px 8px;
+    width: 312px;
+    gap: 10px;
+    margin: 20px;
+
+    & > * {
+      flex: 1 1 100px;
+    }
+    .to-do-item-text {
+      flex: 2 2 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .to-do-item-start-time {
+      text-align: right;
+    }
+  }
+  .delete-todo-list {
+    @include button-style-orange;
+    width: 200px;
+  }
+}

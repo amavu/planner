@@ -20,9 +20,12 @@
       }
     }
   }
+  .form-homepage > * {
+    margin: 20px;
+  }
 
   .input-style {
-    @include input-style-login;
+    @include input-style;
   }
 
   .sign-in-button {
@@ -33,6 +36,14 @@
     font-size: 20px;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
+    margin: 0 auto;
+  }
+
+  .show-error {
+    display: block;
+  }
+
+  .hide-error {
+    display: none;
   }
 }

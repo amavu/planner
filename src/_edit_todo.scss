@@ -40,6 +40,11 @@
       }
     }
 
+    .react-datepicker__input-container {
+      display: flex;
+      justify-content: center;
+    }
+
     .buttons-edit-todo {
       display: flex;
       flex-direction: row;
@@ -57,6 +62,12 @@
         width: 124px;
         height: 41px;
       }
+    }
+    .edit-delete-button {
+      @include button-style-purple;
+      margin: 0 auto;
+      width: 124px;
+      height: 41px;
     }
   }
 }
