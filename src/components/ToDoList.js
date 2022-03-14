@@ -33,8 +33,8 @@ export const ToDoList = ({ checkLoginStatus }) => {
           toDoList.map((todo, index) => {
             return (
               <div className="to-do-item" key={index}>
-                <Link to={`/edit-todo/${todo.id}`}>
-                  <span className="to-do-item-text">{todo.text}</span>
+                <Link className="to-do-item-text" to={`/edit-todo/${todo.id}`}>
+                  <span>{todo.text}</span>
                 </Link>
                 <span className="to-do-item-start-time">{todo.starttime}</span>
                 <input type="checkbox" className="" />
