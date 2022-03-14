@@ -1,8 +1,8 @@
 @mixin button-style-purple {
-  background-color: rgba(155, 54, 255, 1);
+  background-color: #ad63f7;
   color: white;
   border-style: none;
-  box-shadow: 0 1px 5px rgba(138, 31, 188, 0.7);
+  box-shadow: 0 1px 5px #8a1fbcb3;
   font-family: "Inter", sans-serif;
 }
 
@@ -15,11 +15,22 @@
 }
 
 @mixin button-style-orange {
-  background-color: rgba(255, 126, 54, 1);
+  background-color: #ff7e36;
   color: black;
   font-weight: bold;
   border-style: none;
-  box-shadow: 0 1px 5px rgba(255, 116, 38, 0.3);
+  box-shadow: 0 1px 5px #ff74264d;
+  font-family: "Inter", sans-serif;
+  width: 124px;
+  height: 41px;
+}
+
+@mixin list-style {
+  background-color: #f70ee3;
+  color: black;
+  font-weight: bold;
+  border-style: none;
+  box-shadow: 0 1px 5px #924173d2;
   font-family: "Inter", sans-serif;
   width: 124px;
   height: 41px;

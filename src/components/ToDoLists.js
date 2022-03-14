@@ -66,9 +66,9 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
         {toDoLists &&
           toDoLists.map((todolist, index) => {
             return (
-              <div className="to-do-list" key={index}>
+              <div className="to-do-lists-item" key={index}>
                 <Link to={`/todolist/${todolist.id}`}>
-                  <button>{todolist.name}</button>
+                  <button className="list-button">{todolist.name}</button>
                 </Link>
               </div>
             );
