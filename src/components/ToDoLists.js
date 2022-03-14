@@ -10,10 +10,10 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
   const [listName, setListName] = useState();
   const [toDoDate, setToDoDate] = useState(new Date());
   const history = useHistory();
+  const token = localStorage.getItem("plannertoken");
 
   useEffect(async () => {
-    if (checkLoginStatus) {
-      const token = localStorage.getItem("plannertoken");
+    if (token) {
       const payload = jwtDecode(token);
       const toDoLists = await getToDoLists(payload.id);
       setToDoLists(toDoLists);

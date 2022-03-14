@@ -22,7 +22,7 @@ const App = () => {
       const payload = jwtDecode(token);
       await setLoggedInUserInfo(payload);
     } else {
-      history.replace("/");
+      history.push("/");
     }
   }, []);
 
