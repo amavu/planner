@@ -34,10 +34,10 @@ export const Homepage = ({ onLoginChange }) => {
       setShowError(false);
 
       // 2. Store token in local storage
-      localStorage.setItem("plannertoken", token);
+      await localStorage.setItem("plannertoken", token);
 
       //2.1 Change Login status
-      onLoginChange();
+      await onLoginChange();
 
       // 3. Redirect back to feed
       history.replace("/todolists");

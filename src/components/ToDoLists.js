@@ -15,6 +15,7 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
     if (checkLoginStatus) {
       const token = localStorage.getItem("plannertoken");
       const payload = jwtDecode(token);
+      console.log(payload);
       const toDoLists = await getToDoLists(payload.id);
       setToDoLists(toDoLists);
     } else {
@@ -24,10 +25,12 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
   }, []);
 
   const handleCreateToDoList = async (e) => {
+    console.log(loggedInUserInfo);
     if (!loggedInUserInfo || listName === "") {
       return;
     }
     e.preventDefault();
+    console.log(loggedInUserInfo);
     const newList = {
       name: listName,
       day: toDoDate.toISOString(),

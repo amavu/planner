@@ -12,17 +12,16 @@ import { ToDoLists } from "./components/ToDoLists";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loggedInUserInfo, setLoggedInUserInfo] = useState({});
+  const [loggedInUserInfo, setLoggedInUserInfo] = useState();
 
-  useEffect(() => {
-    checkLoginStatus();
-  }, []);
+  // useEffect(() => {
+  //   checkLoginStatus();
+  // }, []);
   const checkLoginStatus = () => {
     try {
-      const token = localStorage.getItem("plannertoken");
-      const payload = jwtDecode(token);
-      setLoggedInUserInfo(payload);
-      return true;
+      if (loggedInUserInfo) {
+        return true;
+      }
     } catch (error) {
       console.log(error);
     }
@@ -30,6 +29,9 @@ const App = () => {
 
   const handleLoginStatusChange = () => {
     console.log("on login changed");
+    const token = localStorage.getItem("plannertoken");
+    const payload = jwtDecode(token);
+    setLoggedInUserInfo(payload);
     setIsLoggedIn(!!localStorage.getItem("plannertoken"));
   };
 
@@ -43,7 +45,7 @@ const App = () => {
           <Route exact path="/">
             <Homepage
               isLoggedIn={isLoggedIn}
-              onLoginChange={() => handleLoginStatusChange}
+              onLoginChange={() => handleLoginStatusChange()}
             />
           </Route>
           <Route path="/signup">
