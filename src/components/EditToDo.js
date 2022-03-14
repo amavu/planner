@@ -81,7 +81,7 @@ export const EditToDo = () => {
             SAVE
           </button>
         </div>
-        <div className="delete-to-do-items-trash-can">
+        <div className="edit-delete-trash-can">
           <TrashIcon onClick={(e) => handleDeleteTodo(e)} />
         </div>
       </form>
