@@ -1,6 +1,6 @@
 // Session
-//const API_URL = process.env.REACT_APP_API_URL;
-const API_URL = "http://localhost:8080"; // remember to change to heroku page!
+const API_URL = process.env.REACT_APP_API_URL;
+//const API_URL = "http://localhost:8080"; // remember to change to heroku page!
 
 export function getLoginToken({ email, password }) {
   return fetch(`${API_URL}/login`, {
