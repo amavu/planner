@@ -3,6 +3,7 @@ import { getToDoLists, createToDoList } from "../services/services";
 import jwtDecode from "jwt-decode";
 import DatePicker from "react-datepicker";
 import { Link, useHistory } from "react-router-dom";
+import { ReactComponent as CalendarIcon } from "../icons/calendar-iso-gradient.svg";
 
 export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
   const [toDoLists, setToDoLists] = useState();
@@ -22,9 +23,6 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
     }
   }, []);
 
-  console.log(loggedInUserInfo);
-  console.log(toDoLists);
-
   const handleCreateToDoList = async (e) => {
     if (!loggedInUserInfo || listName === "") {
       return;
@@ -43,6 +41,7 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
   return (
     <div className="to-do-lists-container">
       <h2>MY TO DO LISTS:</h2>
+      <CalendarIcon width="300px" height="262px" />
       <input
         type="text"
         placeholder="NAME TO DO LIST"
