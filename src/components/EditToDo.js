@@ -3,6 +3,7 @@ import { useParams, useHistory, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { editToDo, getToDoById, deleteToDo } from "../services/services";
+import { ReactComponent as TrashIcon } from "../icons/trash-can-iso-color.svg";
 
 export const EditToDo = () => {
   const { todoId } = useParams();
@@ -80,12 +81,9 @@ export const EditToDo = () => {
             SAVE
           </button>
         </div>
-        <button
-          onClick={(e) => handleDeleteTodo(e)}
-          className="edit-delete-button"
-        >
-          DELETE
-        </button>
+        <div className="delete-to-do-items-trash-can">
+          <TrashIcon onClick={(e) => handleDeleteTodo(e)} />
+        </div>
       </form>
     </div>
   );
