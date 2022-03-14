@@ -10,9 +10,6 @@ export const SignUp = () => {
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [img, setImg] = useState(
-    "https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg"
-  );
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -22,7 +19,6 @@ export const SignUp = () => {
       surname,
       email,
       password,
-      img,
     };
     //checks if all the fields are filled out
     if (Object.values(user).some((field) => field === "")) {
@@ -42,18 +38,6 @@ export const SignUp = () => {
     <div className="sign-up-container">
       <h2>SIGN UP</h2>
       <form className="form-container" onSubmit={(e) => handleSignUp(e)}>
-        <div className="profile-picture">
-          <CgProfile size="50px" className="default-profile-picture" />
-          <label className="input-label img-label">
-            <span>UPLOAD PROFILE PICTURE</span>
-            <input
-              className="picture-input"
-              type="file"
-              name="profile picture"
-              placeholder="Input profile picture url"
-            />
-          </label>
-        </div>
         <div className="two-column-row">
           <label className="input-label" htmlFor="first name">
             First Name

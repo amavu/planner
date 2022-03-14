@@ -136,3 +136,27 @@ export function deleteToDoList(id) {
     method: "DELETE",
   }).then((res) => res.json());
 }
+
+export function shareToDoListWithUser(todolistId, email) {
+  return fetch(`${API_URL}/sharetodolist/${todolistId}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email }),
+  }).then((response) => {
+    return response.json();
+  });
+}
+
+export function checkToDo(todoId, checked) {
+  return fetch(`${API_URL}/checktodo/${todoId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ checked }),
+  }).then((response) => {
+    return response.json();
+  });
+}

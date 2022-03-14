@@ -15,7 +15,6 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
     if (checkLoginStatus) {
       const token = localStorage.getItem("plannertoken");
       const payload = jwtDecode(token);
-      console.log(payload);
       const toDoLists = await getToDoLists(payload.id);
       setToDoLists(toDoLists);
     } else {
@@ -25,12 +24,10 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
   }, []);
 
   const handleCreateToDoList = async (e) => {
-    console.log(loggedInUserInfo);
     if (!loggedInUserInfo || listName === "") {
       return;
     }
     e.preventDefault();
-    console.log(loggedInUserInfo);
     const newList = {
       name: listName,
       day: toDoDate.toISOString(),
@@ -39,6 +36,13 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
     await createToDoList(newList);
     const toDoLists = await getToDoLists(loggedInUserInfo.id);
     setToDoLists(toDoLists);
+  };
+
+  const formatDate = (isoDateString) => {
+    const date = isoDateString.split("T")[0];
+    const datelist = date.split("-");
+    const startDayString = datelist[2] + "/" + datelist[1] + "/" + datelist[0];
+    return startDayString;
   };
 
   return (
@@ -71,7 +75,8 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
               <div className="to-do-lists-item" key={index}>
                 <Link to={`/todolist/${todolist.id}`}>
                   <button className="list-button">
-                    {todolist.name.toUpperCase()}
+                    <span>{todolist.name.toUpperCase()}</span>
+                    <span>{formatDate(todolist.day)}</span>
                   </button>
                 </Link>
               </div>

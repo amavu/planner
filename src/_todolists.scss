@@ -22,6 +22,9 @@
   }
 
   .list-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @include list-style;
   }
 }
