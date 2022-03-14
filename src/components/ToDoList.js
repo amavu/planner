@@ -1,16 +1,23 @@
 import { useEffect, useState } from "react";
-import { getToDoList, deleteToDoList } from "../services/services";
+import {
+  getToDoList,
+  getToDoListById,
+  deleteToDoList,
+} from "../services/services";
 import { useParams, Link, useHistory } from "react-router-dom";
 
 export const ToDoList = ({ checkLoginStatus }) => {
   const [toDoList, setToDoList] = useState();
   const { todolistId } = useParams();
+  const [toDoListInfo, setToDoListInfo] = useState();
   const history = useHistory();
 
   useEffect(async () => {
     if (checkLoginStatus) {
       const toDos = await getToDoList(todolistId);
+      const toDoList = await getToDoListById(todolistId);
       setToDoList(toDos);
+      setToDoListInfo(toDoList);
     } else {
       console.log("Not authorized");
     }
@@ -24,7 +31,7 @@ export const ToDoList = ({ checkLoginStatus }) => {
 
   return (
     <div className="to-do-list-container">
-      <h2>TO DO LIST:</h2>
+      <h2>{toDoListInfo && toDoListInfo.name}</h2>
       <Link to={`/add-todo/${todolistId}`}>
         <button className="add-to-do-button">ADD TO DO</button>
       </Link>

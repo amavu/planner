@@ -117,6 +117,14 @@ export function getToDoById(id) {
     });
 }
 
+export function getToDoListById(id) {
+  return fetch(`${API_URL}/todolist/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      return data;
+    });
+}
+
 export function deleteToDo(id) {
   return fetch(`${API_URL}/todo/${id}`, {
     method: "DELETE",
