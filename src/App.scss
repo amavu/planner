@@ -4,6 +4,7 @@
 @import "add";
 @import "edit_todo";
 @import "todolist";
+@import "todolists";
 
 html {
   display: flex;
@@ -16,11 +17,16 @@ html {
 h1 {
   display: flex;
   flex-direction: column;
-  background-color: rgba(155, 54, 255, 1);
+  background-color: #ad63f7;
   margin: 0 auto;
   height: 100px;
   align-items: center;
   justify-content: center;
+  color: black;
+}
+
+a {
+  text-decoration: none;
 }
 
 .app-container {
