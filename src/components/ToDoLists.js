@@ -67,7 +67,9 @@ export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
             return (
               <div className="to-do-lists-item" key={index}>
                 <Link to={`/todolist/${todolist.id}`}>
-                  <button className="list-button">{todolist.name}</button>
+                  <button className="list-button">
+                    {todolist.name.toUpperCase()}
+                  </button>
                 </Link>
               </div>
             );

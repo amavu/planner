@@ -31,7 +31,7 @@ export const ToDoList = ({ checkLoginStatus }) => {
 
   return (
     <div className="to-do-list-container">
-      <h2>{toDoListInfo && toDoListInfo.name}</h2>
+      <h2>{toDoListInfo && toDoListInfo.name.toUpperCase()}</h2>
       <Link to={`/add-todo/${todolistId}`}>
         <button className="add-to-do-button">ADD TO DO</button>
       </Link>
