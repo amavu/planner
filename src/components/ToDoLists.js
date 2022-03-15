@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker";
 import { Link, useHistory } from "react-router-dom";
 import { ReactComponent as CalendarIcon } from "../icons/calendar-iso-gradient.svg";
 
-export const ToDoLists = ({ loggedInUserInfo, checkLoginStatus }) => {
+export const ToDoLists = ({ loggedInUserInfo }) => {
   const [toDoLists, setToDoLists] = useState();
   const [listName, setListName] = useState();
   const [toDoDate, setToDoDate] = useState(new Date());
