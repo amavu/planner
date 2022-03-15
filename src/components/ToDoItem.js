@@ -8,7 +8,6 @@ export const ToDoItem = ({ todo }) => {
   const handleCheckToDo = async (e, todoId) => {
     e.preventDefault();
     const newToDo = await checkToDo(todoId, e.target.checked);
-    console.log(newToDo);
     setIsChecked(newToDo.checked);
   };
 
