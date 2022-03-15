@@ -5,7 +5,6 @@ import {
   getToDoListById,
   deleteToDoList,
   shareToDoListWithUser,
-  checkToDo,
 } from "../services/services";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { ToDoItem } from "./ToDoItem";
@@ -61,7 +60,7 @@ export const ToDoList = ({ checkLoginStatus }) => {
       {showShareError && <span>Sharing failed</span>}
       {showShareSuccess && <span>List shared</span>}
       {isOwner && (
-        <div>
+        <div className="share-container">
           <input
             type="text"
             placeholder="EMAIL TO SHARE"
@@ -70,7 +69,12 @@ export const ToDoList = ({ checkLoginStatus }) => {
             value={shareEmailText}
             onChange={(e) => setShareEmailText(e.target.value)}
           />
-          <button onClick={(e) => handleShareToUser(e)}>SHARE</button>
+          <button
+            className="share-button"
+            onClick={(e) => handleShareToUser(e)}
+          >
+            SHARE
+          </button>
         </div>
       )}
       <Link to={`/add-todo/${todolistId}`}>

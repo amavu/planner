@@ -7,6 +7,16 @@
   height: calc(100vh - 100px);
   background-color: #ad63f7;
 
+  .share-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+
+    .share-button {
+      @include share-button;
+    }
+  }
+
   .add-to-do-button {
     @include button-style-orange;
   }
