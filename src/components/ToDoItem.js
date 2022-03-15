@@ -15,7 +15,6 @@ export const ToDoItem = ({ todo }) => {
     const date = new Date(starttime);
     let hours = `${date.getHours()}`.padStart(2, "0");
     let minutes = `${date.getMinutes()}`.padStart(2, "0");
-
     const displayTime = hours + ":" + minutes;
     return displayTime;
   };
