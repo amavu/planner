@@ -48,9 +48,8 @@ export const ToDoList = ({ checkLoginStatus }) => {
       setShowShareSuccess(true);
       setShowShareError(false);
     } catch (error) {
-      console.log(error);
-      setShowShareSuccess(false);
       setShowShareError(true);
+      setShowShareSuccess(false);
     }
   };
 

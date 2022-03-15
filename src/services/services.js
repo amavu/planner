@@ -1,6 +1,5 @@
 // Session
 const API_URL = process.env.REACT_APP_API_URL;
-//const API_URL = "http://localhost:8080"; // remember to change to heroku page!
 
 export function getLoginToken({ email, password }) {
   return fetch(`${API_URL}/login`, {
@@ -145,6 +144,9 @@ export function shareToDoListWithUser(todolistId, email) {
     },
     body: JSON.stringify({ email }),
   }).then((response) => {
+    if (response.status === 404) {
+      throw "User not found";
+    }
     return response.json();
   });
 }
