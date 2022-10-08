@@ -21,7 +21,7 @@ export const ToDoLists = ({ loggedInUserInfo }) => {
       history.push("/");
       console.log("Not authorized");
     }
-  }, []);
+  }, [token, history]);
 
   const handleCreateToDoList = async (e) => {
     if (!loggedInUserInfo || listName === "") {
