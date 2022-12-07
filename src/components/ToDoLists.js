@@ -7,10 +7,11 @@ import { ReactComponent as CalendarIcon } from "../icons/calendar-iso-gradient.s
 
 export const ToDoLists = ({ loggedInUserInfo }) => {
   const [toDoLists, setToDoLists] = useState();
-  const [listName, setListName] = useState();
+  const [listName, setListName] = useState("");
   const [toDoDate, setToDoDate] = useState(new Date());
   const history = useHistory();
   const token = localStorage.getItem("plannertoken");
+ 
 
   useEffect(async () => {
     if (token) {
@@ -45,6 +46,10 @@ export const ToDoLists = ({ loggedInUserInfo }) => {
     return startDayString;
   };
 
+  const sortTodoListByDate = (todolist) => {
+    return todolist.sort((a, b) => a.day < b.day ? -1 : 1)
+  };
+
   return (
     <div className="to-do-lists-container">
       <h2>MY TO DO LISTS:</h2>
@@ -62,20 +67,22 @@ export const ToDoLists = ({ loggedInUserInfo }) => {
         onChange={(date) => setToDoDate(date)}
         dateFormat="dd/MM/yyyy"
       />
+      
       <button
         onClick={(e) => handleCreateToDoList(e)}
         className="add-new-list-button"
       >
         ADD NEW LIST
       </button>
-      <div className="to-do-lists">
+      <div className="to-do-lists"> 
         {toDoLists &&
-          toDoLists.map((todolist, index) => {
+          sortTodoListByDate(toDoLists).map((todolist, index) => {
             return (
               <div className="to-do-lists-item" key={index}>
                 <Link to={`/todolist/${todolist.id}`}>
                   <button className="list-button">
-                    <span>{todolist.name.toUpperCase()}</span>
+                    <span> {todolist.name && todolist.name.toUpperCase()} 
+                      </span>
                     <span>{formatDate(todolist.day)}</span>
                   </button>
                 </Link>

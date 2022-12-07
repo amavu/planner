@@ -11,7 +11,7 @@ import { ToDoItem } from "./ToDoItem";
 
 export const ToDoList = ({ checkLoginStatus }) => {
   const [toDoList, setToDoList] = useState();
-  const [toDoListInfo, setToDoListInfo] = useState();
+  const [toDoListInfo, setToDoListInfo] = useState(null);
   const [shareEmailText, setShareEmailText] = useState("");
   const [showShareError, setShowShareError] = useState(false);
   const [showShareSuccess, setShowShareSuccess] = useState(false);
@@ -53,6 +53,10 @@ export const ToDoList = ({ checkLoginStatus }) => {
     }
   };
 
+  const sortTodosByDate = (todos) => {
+    return todos.sort((a, b) => a.starttime < b.starttime ? -1 : 1)
+  };
+
   return (
     <div className="to-do-list-container">
       <h2>{toDoListInfo && toDoListInfo.name.toUpperCase()}</h2>
@@ -81,7 +85,7 @@ export const ToDoList = ({ checkLoginStatus }) => {
       </Link>
       <div className="to-do-list-items">
         {toDoList &&
-          toDoList.map((todo, index) => {
+          sortTodosByDate(toDoList).map((todo, index) => {
             return <ToDoItem todo={todo} key={index} />;
           })}
       </div>
