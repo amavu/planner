@@ -53,7 +53,7 @@ export const ToDoList = ({ checkLoginStatus }) => {
     }
   };
 
-  const sortTodosByDate = (todos) => {
+  const sortTodosByTime = (todos) => {
     return todos.sort((a, b) => a.starttime < b.starttime ? -1 : 1)
   };
 
@@ -85,7 +85,7 @@ export const ToDoList = ({ checkLoginStatus }) => {
       </Link>
       <div className="to-do-list-items">
         {toDoList &&
-          sortTodosByDate(toDoList).map((todo, index) => {
+          sortTodosByTime(toDoList).map((todo, index) => {
             return <ToDoItem todo={todo} key={index} />;
           })}
       </div>
