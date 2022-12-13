@@ -4,6 +4,7 @@
   border-style: none;
   box-shadow: 0 1px 5px #8a1fbcb3;
   font-family: "Inter", sans-serif;
+  cursor: pointer;
 }
 
 @mixin input-style {
@@ -23,6 +24,7 @@
   font-family: "Inter", sans-serif;
   width: 124px;
   height: 41px;
+  cursor: pointer;
 }
 
 @mixin list-style {
@@ -34,6 +36,7 @@
   font-family: "Inter", sans-serif;
   width: 150px;
   height: 41px;
+  cursor: pointer;
 }
 
 @mixin share-button {
@@ -42,4 +45,5 @@
   font-weight: bold;
   border-style: none;
   font-family: "Inter", sans-serif;
+  cursor: pointer;
 }
