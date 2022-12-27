@@ -11,13 +11,13 @@ html {
   flex-direction: column;
   body {
     font-family: "Inter", sans-serif;
-    background-color: #ad63f7;
   }
 }
 
 .app-links-container {
   display: flex;
   flex-direction: column;
+  background-color: #ad63f7;
 }
 
 .planner-header {
@@ -46,8 +46,6 @@ html {
   }
 }
 
-
-
 a {
   text-decoration: none;
 }
@@ -56,5 +54,3 @@ a {
   max-height: 100vh;
   height: 100vh;
 }
-
-
