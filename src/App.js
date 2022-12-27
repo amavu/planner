@@ -3,6 +3,7 @@ import jwtDecode from "jwt-decode";
 import { HashRouter, Route, Switch, Link, useHistory } from "react-router-dom";
 import { Homepage } from "./components/Homepage";
 import { SignUp } from "./components/SignUp";
+import { Profile } from "./components/Profile";
 import { Edit } from "./components/Edit";
 import { Add } from "./components/Add";
 import { EditToDo } from "./components/EditToDo";
@@ -48,12 +49,12 @@ const App = () => {
     <HashRouter>
       <div className="app-container">
         <div className="app-links-container">
-          <Link to="/todolists">
+          <Link className="planner-header" to="/todolists">
             <h1>Planner</h1>
           </Link>
           {loggedInUserInfo && (
-            <Link to="/logout">
-              <p className="log-out-link">Log Out</p>
+            <Link className="logout-link" to="/logout">
+              <span>Log Out</span>
             </Link>
           )}
         </div>
@@ -84,6 +85,9 @@ const App = () => {
           </Route>
           <Route path="/edit-todo/:todoId">
             <EditToDo />
+          </Route>
+          <Route path="/profile">
+            <Profile loggedInUserInfo={loggedInUserInfo} />
           </Route>
           <Route path="/logout">
             <Logout removeLoggedInUser={() => setLoggedInUserInfo()} />

@@ -1,0 +1,52 @@
+@import "mixins";
+
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 150px);
+  padding-top: 50px;
+  background-color: #ad63f7;
+
+  .form-container > * {
+    margin-bottom: 30px;
+  }
+
+  .input-label {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+
+    .input-style {
+      height: 30px;
+      border-radius: 8px;
+      border: 1px solid #bfbfbf;
+    }
+  }
+
+  .two-column-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .input-label {
+      width: 45%;
+      position: relative;
+    }
+  }
+
+  .buttons-sign-up-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 70px;
+
+    .cancel-button {
+      @include button-style-orange;
+    }
+
+    .sign-up-button {
+      @include button-style-orange;
+    }
+  }
+}
