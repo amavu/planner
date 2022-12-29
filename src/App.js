@@ -53,6 +53,11 @@ const App = () => {
             <h1>Planner</h1>
           </Link>
           {loggedInUserInfo && (
+            <Link className="profile-link" to="/profile">
+              <span>Profile</span>
+            </Link>
+          )}
+          {loggedInUserInfo && (
             <Link className="logout-link" to="/logout">
               <span>Log Out</span>
             </Link>
