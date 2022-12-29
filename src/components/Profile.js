@@ -70,7 +70,7 @@ export const Profile = ({ loggedInUserInfo }) => {
           />
         </label>
         <div className="buttons-sign-up-form">
-          <Link to="/">
+          <Link to="/todolists">
             <button className="cancel-button">CANCEL</button>
           </Link>
           <button className="sign-up-button" type="submit">

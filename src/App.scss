@@ -46,6 +46,19 @@ html {
   }
 }
 
+.profile-link {
+  align-self: flex-end;
+
+  span {
+    padding-right: 20px;
+    margin: 0;
+    color: black;
+    font-weight: bold;
+    text-align: right;
+    padding-left: 20px;
+  }
+}
+
 a {
   text-decoration: none;
 }
