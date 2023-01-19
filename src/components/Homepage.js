@@ -4,11 +4,16 @@ import { getLoginToken } from "../services/services";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-export const Homepage = ({ onLoginChange }) => {
+export const Homepage = ({ checkLoginStatus, onLoginChange }) => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
+
+  const isLoggedIn = checkLoginStatus();
+  if (isLoggedIn) {
+    history.push("/todolists");
+  }
 
   const handleSubmit = (e) => {
     if (e.keyCode === 13) {

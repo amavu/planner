@@ -66,15 +66,12 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <Homepage
-              isLoggedIn={isLoggedIn}
+              checkLoginStatus={() => checkLoginStatus()}
               onLoginChange={() => handleLoginStatusChange()}
             />
           </Route>
           <Route path="/signup">
             <SignUp />
-          </Route>
-          <Route path="/edit">
-            <Edit />
           </Route>
           <Route path="/todolists">
             <ToDoLists
@@ -93,6 +90,9 @@ const App = () => {
           </Route>
           <Route path="/profile">
             <Profile loggedInUserInfo={loggedInUserInfo} />
+          </Route>
+          <Route path="/edit">
+            <Edit loggedInUserInfo={loggedInUserInfo} />
           </Route>
           <Route path="/logout">
             <Logout removeLoggedInUser={() => setLoggedInUserInfo()} />
